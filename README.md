@@ -1,6 +1,6 @@
 # GraphQL Code Generator plugin for generating Golang
 
-| This package is work in progress. Contributions are welcome <3.
+> This package is work in progress. Contributions are welcome <3.
 
 This package generates Golang types and requests which use:
 
@@ -32,7 +32,11 @@ generates:
 
 ## Configuration
 
-None for now.
+Configuration source is at [src/config.ts](src/config.ts)
+
+| Name        | Default | Description                           |
+| ----------- | ------- | ------------------------------------- |
+| packageName | graphql | Name of the generated Golang package. |
 
 ## License
 
