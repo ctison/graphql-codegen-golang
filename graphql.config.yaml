@@ -1,0 +1,12 @@
+schema: graphql/schema.graphql
+documents:
+  - graphql/!(schema).graphql
+  - main.go
+extensions:
+  codegen:
+    hooks:
+      afterAllFileWrite: go fmt
+    generates:
+      pkg/graphql/graphql.go:
+        plugins:
+          - dist/index.js

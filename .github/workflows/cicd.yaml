@@ -1,0 +1,23 @@
+name: CI/CD
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and test
+        run: |
+          yarn
+          yarn run build
+          yarn run codegen
+      - name: Publish NPM package
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          npm version --no-git-tag-version "${GITHUB_REF##refs/tags/}"
+           echo "$NPM_TOKEN" > .npmrc
+          npm publish --access public
+          rm .npmrc
