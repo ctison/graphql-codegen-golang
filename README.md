@@ -19,15 +19,15 @@ yarn install -D graphql-codegen-golang
 ## Usage: `codegen.yaml`
 
 ```yaml
-hooks:
-  afterAllFileWrite: go fmt
-
 schema: graphql/schema.graphql
 documents: graphql/documents/**/*.graphql
 generates:
-  gen/output.go:
+  pkg/graphql/graphql.go:
+    hooks:
+      afterOneFileWrite: go fmt
     plugins:
-      - graphql-codegen-golang
+      - graphql-codegen-golang:
+          packageName: graphql # default
 ```
 
 ## Configuration

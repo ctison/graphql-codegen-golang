@@ -4,9 +4,10 @@ documents:
   - main.go
 extensions:
   codegen:
-    hooks:
-      afterAllFileWrite: go fmt
     generates:
       pkg/graphql/graphql.go:
+        hooks:
+          afterOneFileWrite: go fmt
         plugins:
-          - dist/index.js
+          - dist/index.js:
+              # packageName: graphql # default
