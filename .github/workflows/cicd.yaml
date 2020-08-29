@@ -34,4 +34,4 @@ jobs:
           release_name: v${{steps.version.outputs.version}}
           body: |
             ## NPM Package
-            https://www.npmjs.com/package/graphql-codegen-golang/v/$${{steps.version.outputs.version}}
+            https://www.npmjs.com/package/graphql-codegen-golang/v/${{steps.version.outputs.version}}
