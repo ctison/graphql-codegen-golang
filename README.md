@@ -28,8 +28,8 @@ yarn install -D graphql-codegen-golang
 ## Usage: `codegen.yaml`
 
 ```yaml
-schema: graphql/schema.graphql
-documents: graphql/documents/**/*.graphql
+schema: pkg/graphql/schema.graphql
+documents: pkg/graphql/!(schema).graphql
 generates:
   pkg/graphql/graphql.go:
     hooks:
