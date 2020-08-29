@@ -13,8 +13,12 @@
 
 This package generates Golang types and requests which use:
 
+- [bytes](https://pkg.go.dev/bytes)
 - [encoding/json](https://pkg.go.dev/encoding/json)
+- [fmt](https://pkg.go.dev/fmt)
 - [net/http](https://pkg.go.dev/net/http)
+- [io/ioutil](https://pkg.go.dev/io/ioutil)
+- [strings](https://pkg.go.dev/strings)
 
 ## Install
 
