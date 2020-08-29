@@ -1,6 +1,13 @@
 name: CI/CD
 
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+      - README.md
+      - .gitignore
+      - .prettierignore
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
