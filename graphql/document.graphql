@@ -1,5 +1,0 @@
-query GetCloudProviders {
-  CloudProviders {
-    id
-  }
-}

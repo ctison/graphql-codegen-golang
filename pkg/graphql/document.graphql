@@ -1,0 +1,11 @@
+query GetCloudProviders($order_by: [CloudProviders_order_by!]) {
+  CloudProviders(limit: 1, order_by: $order_by) {
+    id
+  }
+}
+
+query GetUsers($limit: Int = 1) {
+  Users(limit: $limit) {
+    id
+  }
+}

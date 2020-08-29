@@ -1,6 +1,15 @@
 # GraphQL Code Generator plugin for generating Golang
 
-> This package is work in progress. Contributions are welcome <3.
+> This package is work in progress.
+
+## Roadmap
+
+- [x] Generate types
+- [x] Generate queries and mutations
+- [ ] Generate subscriptions with gorilla websocket
+- [ ] Add more configuration options
+- [ ] Avoid collisions ?
+- [ ] Write tests
 
 This package generates Golang types and requests which use:
 

@@ -1,3 +1,5 @@
+scalar test_format
+
 schema {
   query: query_root
   subscription: subscription_root
@@ -7,6 +9,10 @@ schema {
 type CloudProviders {
   id: uuid!
   name: name!
+}
+
+type test_format_object {
+  test_format_field: test_format
 }
 
 # Boolean expression to filter rows from the table "CloudProviders". All fields are combined with a logical 'AND'.

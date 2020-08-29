@@ -2600,6 +2600,11 @@ lint-staged@10.2.12:
     string-argv "0.3.1"
     stringify-object "^3.3.0"
 
+liquidjs@9.15.0:
+  version "9.15.0"
+  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.15.0.tgz#03e8c13aeda89801a346c614b0802f320458d0ac"
+  integrity sha512-wRPNfMx6X3GGEDqTlBpw7VMo8ylKkzLYTcd7eeaDeYnZyR5BqUgF9tZy3FdPCHV2N/BassGKmlmlpJiRXGFOqg==
+
 listr-silent-renderer@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/listr-silent-renderer/-/listr-silent-renderer-1.1.1.tgz#924b5a3757153770bf1a8e3fbf74b8bbf3f9242e"

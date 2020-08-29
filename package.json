@@ -2,16 +2,19 @@
   "name": "graphql-codegen-golang",
   "description": "Graphql Code Generator plugin for generating Golang",
   "scripts": {
+    "dev": "yarn run build && yarn run codegen",
     "build": "tsc",
-    "codegen": "yarn run build && graphql-codegen",
+    "codegen": "yarn run graphql-codegen",
+    "test": "go test -v ./pkg/rickandmorty/",
     "mock": "graphql-inspector serve graphql/schema.graphql",
     "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,yaml,gql,md,html,css}'",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "build:precommit": "yarn run codegen && :"
+    "build:precommit": "yarn run dev && :"
   },
   "dependencies": {
     "@graphql-codegen/plugin-helpers": "1.17.8",
-    "graphql": "15.3.0"
+    "graphql": "15.3.0",
+    "liquidjs": "9.15.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.17.8",
@@ -44,7 +47,6 @@
   },
   "prettier": {
     "arrowParens": "avoid",
-    "printWidth": 100,
     "semi": false,
     "singleQuote": true
   },

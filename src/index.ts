@@ -1,19 +1,28 @@
-import { PluginFunction, PluginValidateFn } from '@graphql-codegen/plugin-helpers'
-import { parse, printSchema } from 'graphql'
+import {
+  PluginFunction,
+  PluginValidateFn,
+} from '@graphql-codegen/plugin-helpers'
 import { GolangPluginConfig } from './config'
-import { GolangVisitor } from './visitor'
+import { GolangGenerator } from './generator'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const plugin: PluginFunction<GolangPluginConfig> = (schema, documents, config, info) => {
-  const printedSchema = printSchema(schema)
-  const astNode = parse(printedSchema)
-  const visitor = new GolangVisitor(config)
-  visitor.visit(astNode)
-  return visitor.generate()
+export const plugin: PluginFunction<GolangPluginConfig> = (
+  schema,
+  documents,
+  config
+) => {
+  const generator = new GolangGenerator(schema, config)
+  const notDefined = <T>(x: T | undefined): x is T => {
+    return x !== undefined
+  }
+  return generator.generate(
+    documents.map(document => document.document).filter(notDefined)
+  )
 }
 
-export const validate: PluginValidateFn = async (schema, documents, config, outputFile: string) => {
+export const validate: PluginValidateFn = async (_, __, ___, outputFile) => {
   if (!outputFile.endsWith('.go')) {
-    throw new Error(`Plugin "golang" requires output file extension to be ".go"!`)
+    throw new Error(
+      `Plugin "golang" requires output file extension to be ".go"!`
+    )
   }
 }
