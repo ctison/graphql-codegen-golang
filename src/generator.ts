@@ -331,14 +331,13 @@ export class GolangGenerator {
               }
               w.push('struct {')
             } else {
-              w.push(`string \`json:"${name}"\``)
+              w.push(`string \`json:"${field.name.value}"\``)
             }
             l.push(w.join(''))
           },
           leave: field => {
             if (field.selectionSet) {
-              const name = this.formatName(field.name.value)
-              l.push(`} \`json:"${name}"\``)
+              l.push(`} \`json:"${field.name.value}"\``)
             }
           },
         },
