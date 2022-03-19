@@ -8,7 +8,7 @@
 - [x] Generate queries and mutations
 - [ ] Generate subscriptions with gorilla websocket
 - [ ] Add more configuration options
-- [ ] Avoid collisions ?
+- [ ] Avoid possible naming collisions
 - [ ] Write tests
 
 This package generates Golang types and requests which use:
@@ -24,9 +24,10 @@ This package generates Golang types and requests which use:
 
 The package is published to [graphql-codegen-golang](https://www.npmjs.com/package/graphql-codegen-golang).
 
-```
-npm install -D graphql-codegen-golang
-yarn install -D graphql-codegen-golang
+```sh
+pnpm install -DE graphql-codegen-golang
+yarn install -DE graphql-codegen-golang
+npm install -DE graphql-codegen-golang
 ```
 
 ## Usage: `codegen.yaml`
@@ -50,7 +51,3 @@ Configuration source is at [src/config.ts](src/config.ts)
 | Name        | Default | Description                           |
 | ----------- | ------- | ------------------------------------- |
 | packageName | graphql | Name of the generated Golang package. |
-
-## License
-
-MIT
