@@ -1,4 +1,4 @@
-import { GolangPluginConfig } from './config'
+import { IGolangPluginConfig } from './config'
 import * as templates from './templates'
 import { Liquid, Template } from 'liquidjs'
 import {
@@ -26,19 +26,19 @@ export class GolangGenerator {
   /**
    * The configuration used when generating Golang code.
    */
-  readonly config: GolangPluginConfig
+  public readonly config: IGolangPluginConfig
   /**
    * The GraphQL schema used to generate Golang code.
    */
-  readonly schema: GraphQLSchema
+  public readonly schema: GraphQLSchema
 
-  private templateEngine: Liquid
-  private templateOperation: Template[]
+  private _templateEngine: Liquid
+  private _templateOperation: Template[]
 
   /**
    * Map GraphQL type to their Golang format.
    */
-  readonly types: { [key: string]: string } = {
+  public readonly types: { [key: string]: string } = {
     Int: 'Int',
     Float: 'Float',
     Boolean: 'Boolean',
@@ -48,67 +48,69 @@ export class GolangGenerator {
   /**
    * Map GraphQL scalar types to Golang types.
    */
-  readonly scalars: { [key: string]: string } = {
+  public readonly scalars: { [key: string]: string } = {
     Int: 'int32',
     Float: 'float64',
     Boolean: 'bool',
     String: 'string',
     ID: 'string',
   }
-  private enums: EnumTypeDefinitionNode[] = []
-  private inputs: InputObjectTypeDefinitionNode[] = []
-  private objects: ObjectTypeDefinitionNode[] = []
+  private _enums: EnumTypeDefinitionNode[] = []
+  private _inputs: InputObjectTypeDefinitionNode[] = []
+  private _objects: ObjectTypeDefinitionNode[] = []
 
-  constructor(schema: GraphQLSchema, config?: GolangPluginConfig) {
+  public constructor(schema: GraphQLSchema, config?: IGolangPluginConfig) {
     this.config = config ?? {}
     this.schema = schema
-    this.templateEngine = new Liquid({
+    this._templateEngine = new Liquid({
       strictFilters: true,
       strictVariables: true,
     })
-    this.templateOperation = this.templateEngine.parse(
+    this._templateOperation = this._templateEngine.parse(
       templates.GOLANG_OPERATION
     )
     visit(parse(printSchema(this.schema)), {
       ScalarTypeDefinition: node => {
-        this.types[node.name.value] = this.formatName(node.name.value)
+        this.types[node.name.value] = this._formatName(node.name.value)
         this.scalars[node.name.value] = 'string'
         return false
       },
       EnumTypeDefinition: node => {
-        this.types[node.name.value] = this.formatName(node.name.value)
-        this.enums.push(node)
+        this.types[node.name.value] = this._formatName(node.name.value)
+        this._enums.push(node)
         return false
       },
       InputObjectTypeDefinition: node => {
-        this.types[node.name.value] = this.formatName(node.name.value)
-        this.inputs.push(node)
+        this.types[node.name.value] = this._formatName(node.name.value)
+        this._inputs.push(node)
         return false
       },
       ObjectTypeDefinition: node => {
-        this.types[node.name.value] = this.formatName(node.name.value)
-        this.objects.push(node)
+        this.types[node.name.value] = this._formatName(node.name.value)
+        this._objects.push(node)
         return false
       },
     })
   }
 
-  generate(documents?: DocumentNode[]): string {
-    const l = [
-      ...this.generatePackage(),
-      ...this.generateImports(),
+  public generate(documents?: DocumentNode[]): string {
+    const l: string[] = [
+      ...this._generatePackage(),
+      ...this._generateImports(),
       templates.GOLANG_BASE,
     ]
-    documents?.forEach(document => l.push(...this.generateOperations(document)))
-    l.push(...this.generateSchema())
+    documents?.forEach(document =>
+      l.push(...this._generateOperations(document))
+    )
+    l.push(...this._generateSchema())
     return l.join('\n')
   }
 
   /**
    * Format a name for Golang.
-   * @param name Name to format.
+   * @param name - Name to format.
    */
-  private formatName(name: string): string {
+  private _formatName(name: string): string {
     if (name.match(/^id$/i) || name.match(/^uuid$/i)) {
       return name.toUpperCase()
     }
@@ -122,7 +124,7 @@ export class GolangGenerator {
   /**
    * Generate Golang package header.
    */
-  private generatePackage(): string[] {
+  private _generatePackage(): string[] {
     return [
       `package ${this.config.packageName ?? 'graphql'}`,
       '',
@@ -134,7 +136,7 @@ export class GolangGenerator {
   /**
    * Generate Golang imports for operations.
    */
-  private generateImports(): string[] {
+  private _generateImports(): string[] {
     return [
       'import (',
       '  "bytes"',
@@ -150,66 +152,66 @@ export class GolangGenerator {
 
   /**
    * Generate a named comment section.
-   * @param name Name of the section.
+   * @param name - Name of the section.
    */
-  private generateSection(name: string): string[] {
+  private _generateSection(name: string): string[] {
     return ['', '//', `// ${name}`, '//', '']
   }
 
   /**
    * Generate the Golang types from schema.
    */
-  private generateSchema(): string[] {
+  private _generateSchema(): string[] {
     return [
-      ...this.generateScalars(),
-      ...this.generateEnums(),
-      ...this.generateInputs(),
-      ...this.generateObjects(),
+      ...this._generateScalars(),
+      ...this._generateEnums(),
+      ...this._generateInputs(),
+      ...this._generateObjects(),
     ]
   }
 
-  private generateScalars(): string[] {
-    const l = [...this.generateSection('Scalars')]
+  private _generateScalars(): string[] {
+    const l: string[] = [...this._generateSection('Scalars')]
     Object.entries(this.scalars).map(([gqlType, goType]) => {
       l.push(`type ${this.types[gqlType]} ${goType}`)
     })
     return l
   }
 
-  private generateEnums(): string[] {
-    const l = [...this.generateSection('Enums')]
-    this.enums.forEach(node => {
-      const goType = this.types[node.name.value]
+  private _generateEnums(): string[] {
+    const l: string[] = [...this._generateSection('Enums')]
+    this._enums.forEach(node => {
+      const goType: string = this.types[node.name.value]
       l.push('', `type ${this.types[node.name.value]} string`, 'const (')
       node.values?.forEach(value => {
-        const name = value.name.value
-        l.push(`  ${goType}${this.formatName(name)} ${goType} = "${name}"`)
+        const name: string = value.name.value
+        l.push(`  ${goType}${this._formatName(name)} ${goType} = "${name}"`)
       })
       l.push(')')
     })
     return l
   }
 
-  private generateInputs(): string[] {
-    const l = [...this.generateSection('Inputs')]
-    this.inputs.forEach(node => {
-      const goType = this.types[node.name.value]
+  private _generateInputs(): string[] {
+    const l: string[] = [...this._generateSection('Inputs')]
+    this._inputs.forEach(node => {
+      const goType: string = this.types[node.name.value]
       l.push('', `type ${goType} struct {`)
       node.fields?.forEach(field => {
-        l.push(this.generateField(field.name.value, field.type))
+        l.push(this._generateField(field.name.value, field.type))
       })
       l.push('}')
     })
     return l
   }
 
-  private generateObjects(): string[] {
-    const l = [...this.generateSection('Objects')]
-    this.objects.forEach(node => {
-      const goType = this.types[node.name.value]
+  private _generateObjects(): string[] {
+    const l: string[] = [...this._generateSection('Objects')]
+    this._objects.forEach(node => {
+      const goType: string = this.types[node.name.value]
       l.push('', `type ${goType} struct {`)
       node.fields?.forEach(field => {
-        l.push(this.generateField(field.name.value, field.type))
+        l.push(this._generateField(field.name.value, field.type))
       })
       l.push('}')
     })
@@ -218,25 +220,25 @@ export class GolangGenerator {
 
   /**
    * Generate a Golang struct's field.
-   * @param name Name of the GraphQL field.
-   * @param type Type of the GraphQL field.
+   * @param name - Name of the GraphQL field.
+   * @param type - Type of the GraphQL field.
    */
-  private generateField(name: string, type: TypeNode): string {
-    return `  ${this.formatName(name)} ${this.generateFieldType(type, name)}`
+  private _generateField(name: string, type: TypeNode): string {
+    return `  ${this._formatName(name)} ${this._generateFieldType(type, name)}`
   }
 
   /**
    *
-   * @param type TypeNode contains a GraphQL type.
-   * @param fieldName GraphQL field's name for the Golang's json annotation.
-   * @param prefix String accumulator to add to result when recursion is done.
-   * @param nonNull Boolean accumulator to determine if type must be a pointer.
+   * @param type - TypeNode contains a GraphQL type.
+   * @param fieldName - GraphQL field's name for the Golang's json annotation.
+   * @param prefix - String accumulator to add to result when recursion is done.
+   * @param nonNull - Boolean accumulator to determine if type must be a pointer.
    */
-  private generateFieldType(
+  private _generateFieldType(
     type: TypeNode,
     fieldName: string,
-    prefix = '',
-    nonNull = false
+    prefix: string = '',
+    nonNull: boolean = false
   ): string {
     if (type.kind === 'NamedType') {
       return [
@@ -246,7 +248,7 @@ export class GolangGenerator {
       ].join('')
     }
     if (type.kind === 'NonNullType') {
-      return this.generateFieldType(
+      return this._generateFieldType(
         type.type,
         fieldName,
         prefix,
@@ -254,7 +256,7 @@ export class GolangGenerator {
       )
     }
     if (type.kind === 'ListType') {
-      return this.generateFieldType(
+      return this._generateFieldType(
         type.type,
         fieldName,
         prefix + '[]',
@@ -266,11 +268,11 @@ export class GolangGenerator {
 
   /**
    * Generate operations code from a GraphQL document.
-   * @param document Document to get the operations from.
+   * @param document - Document to get the operations from.
    */
-  private generateOperations(document: DocumentNode): string[] {
+  private _generateOperations(document: DocumentNode): string[] {
     const l: string[] = []
-    const typeInfo = new TypeInfo(this.schema)
+    const typeInfo: TypeInfo = new TypeInfo(this.schema)
     visit(
       document,
       visitWithTypeInfo(typeInfo, {
@@ -280,15 +282,15 @@ export class GolangGenerator {
             if (!operation.name) return false
             // Subscription operations are not supported yes.
             if (operation.operation === 'subscription') return false
-            const name = this.formatName(operation.name.value)
+            const name: string = this._formatName(operation.name.value)
             l.push(
-              ...this.generateSection(
+              ...this._generateSection(
                 `${print(operation).split('{', 1)[0].trim()}`
               )
             )
             // Generate operation variables type if any
             l.push(
-              ...this.generateOperationVariables(
+              ...this._generateOperationVariables(
                 name,
                 operation.variableDefinitions
               )
@@ -301,15 +303,15 @@ export class GolangGenerator {
             if (!operation.name) return
             // Inner nodes have been visited. Time to close response type.
             l.push('}', '')
-            const name = this.formatName(operation.name.value)
-            const hasVariables =
-              this.generateOperationVariables(
+            const name: string = this._formatName(operation.name.value)
+            const hasVariables: boolean =
+              this._generateOperationVariables(
                 name,
                 operation.variableDefinitions
               ).length > 0
             // Generate everything except variables and response type
             l.push(
-              ...this.generateOperationCode(
+              ...this._generateOperationCode(
                 name,
                 print(operation),
                 hasVariables
@@ -319,10 +321,12 @@ export class GolangGenerator {
         },
         Field: {
           enter: field => {
-            const name = this.formatName(field.name.value)
-            const w = [`  ${name} `]
+            const name: string = this._formatName(field.name.value)
+            const w: string[] = [`  ${name} `]
             if (field.selectionSet) {
-              const outputType = typeInfo.getType()?.toString()
+              const outputType:
+                | string
+                | undefined = typeInfo.getType()?.toString()
               if (outputType?.startsWith('[')) {
                 if (!outputType.endsWith('!')) {
                   w.push('*')
@@ -348,19 +352,19 @@ export class GolangGenerator {
 
   /**
    * Generate Golang `type ${name}Variables struct {...}`.
-   * @param name Name of the operation. Must be formatted for Golang.
-   * @param variableDefinitions GraphQL variables to generate Golang fields from.
+   * @param name - Name of the operation. Must be formatted for Golang.
+   * @param variableDefinitions - GraphQL variables to generate Golang fields from.
    */
-  private generateOperationVariables(
+  private _generateOperationVariables(
     name: string,
     variableDefinitions: readonly VariableDefinitionNode[] | undefined
   ): string[] {
-    if (!variableDefinitions || variableDefinitions.length == 0) {
+    if (!variableDefinitions || variableDefinitions.length === 0) {
       return []
     }
-    const l = [`type ${name}Variables struct {`]
+    const l: string[] = [`type ${name}Variables struct {`]
     variableDefinitions.forEach(variable => {
-      l.push(this.generateField(variable.variable.name.value, variable.type))
+      l.push(this._generateField(variable.variable.name.value, variable.type))
     })
     l.push('}', '')
     return l
@@ -369,18 +373,18 @@ export class GolangGenerator {
   /**
    * Generates all Golang code for an operation except `type ${name}Variables`
    * and `type ${name}Response`.
-   * @param name Name of the operation. Must be formatted for Golang.
-   * @param operation String version of the operation.
-   * @param hasVariables Whether the operation uses a `${name}Variables` or not.
+   * @param name - Name of the operation. Must be formatted for Golang.
+   * @param operation - String version of the operation.
+   * @param hasVariables - Whether the operation uses a `${name}Variables` or not.
    */
-  private generateOperationCode(
+  private _generateOperationCode(
     name: string,
     operation: string,
     hasVariables: boolean
   ): string[] {
     const l: string[] = []
     l.push(
-      this.templateEngine.renderSync(this.templateOperation, {
+      this._templateEngine.renderSync(this._templateOperation, {
         name,
         operation,
         hasVariables,

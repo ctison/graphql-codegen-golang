@@ -2,10 +2,10 @@
  * GolangPluginConfig lets you configure how GolangGenerator generates
  * Golang code from GraphQL schemas and documents.
  */
-export interface GolangPluginConfig {
+export interface IGolangPluginConfig {
   /**
    * Name of the generated Golang package.
-   * @default graphql
+   * @defaultValue graphql
    * @example
    * ```go
    * package graphql

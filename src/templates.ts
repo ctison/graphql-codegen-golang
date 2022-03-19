@@ -1,4 +1,4 @@
-export const GOLANG_BASE = `
+export const GOLANG_BASE: string = `
 type Client struct {
 	*http.Client
 	Url string
@@ -69,7 +69,7 @@ func unmarshalGraphQLReponse(b []byte) (*GraphQLResponse, error) {
 }
 `
 
-export const GOLANG_OPERATION = `
+export const GOLANG_OPERATION: string = `
 type {{name}}Request struct {
   *http.Request
 }
