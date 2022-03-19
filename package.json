@@ -65,6 +65,7 @@
     "sort-package-json": "1.54.0",
     "typescript": "4.0.2"
   },
+  "packageManager": "pnpm@6.32.3",
   "renovate": {
     "extends": [
       "github>ctison/renovate"
