@@ -1,0 +1,15 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "**/package.json": "json",
+    "**/*.json": "jsonc"
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true
+}
