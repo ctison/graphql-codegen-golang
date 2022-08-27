@@ -54,7 +54,7 @@
     "@graphql-codegen/cli": "2.6.2",
     "@graphql-inspector/cli": "3.1.1",
     "@graphql-inspector/config": "3.1.1",
-    "@graphql-tools/utils": "8.6.3",
+    "@graphql-tools/utils": "8.10.1",
     "@rushstack/eslint-config": "2.5.2",
     "@typescript-eslint/eslint-plugin": "5.15.0",
     "@typescript-eslint/parser": "5.15.0",
