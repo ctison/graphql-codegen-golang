@@ -58,7 +58,7 @@
     "@rushstack/eslint-config": "2.5.2",
     "@typescript-eslint/eslint-plugin": "5.15.0",
     "@typescript-eslint/parser": "5.15.0",
-    "eslint": "8.11.0",
+    "eslint": "8.23.0",
     "eslint-plugin-import": "2.25.4",
     "husky": "7.0.4",
     "lint-staged": "12.3.7",
