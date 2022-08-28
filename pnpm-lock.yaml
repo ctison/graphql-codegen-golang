@@ -14,7 +14,7 @@ specifiers:
   graphql: 16.3.0
   husky: 7.0.4
   lint-staged: 12.3.7
-  liquidjs: 9.36.0
+  liquidjs: 9.42.0
   prettier: 2.6.0
   sort-package-json: 1.54.0
   typescript: 4.6.2
@@ -22,7 +22,7 @@ specifiers:
 dependencies:
   '@graphql-codegen/plugin-helpers': 2.4.2_graphql@16.3.0
   graphql: 16.3.0
-  liquidjs: 9.36.0
+  liquidjs: 9.42.0
 
 devDependencies:
   '@graphql-codegen/cli': 2.6.2_graphql@16.3.0+typescript@4.6.2
@@ -2527,6 +2527,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -3297,8 +3298,8 @@ packages:
       - enquirer
     dev: true
 
-  /liquidjs/9.36.0:
-    resolution: {integrity: sha512-HbU4xBsY1r3ZEORTgPsiluXsOtMx8iI0MqTsPejgIk+sIgta5wQUYsoQgUPuGKWVHKKKMO9PidiMEPKlePl8rg==}
+  /liquidjs/9.42.0:
+    resolution: {integrity: sha512-krvhwGFrMCMGhybGkxJIvlWVVnoCSpYCn7NhEN43+uvlg2vOkYWpq8be+L3NMlOfwe4ZrKQ7hCh1EmS4yhLKow==}
     engines: {node: '>=4.8.7'}
     hasBin: true
     dev: false
