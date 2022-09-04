@@ -9,15 +9,15 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: renovate-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
-      - uses: renovatebot/github-action@bb00a24605e009026226996bf12fb51a89499423 # tag=v32.6.5
+      - uses: actions/checkout@v3
+      - uses: renovatebot/github-action@v32.190.2
         with:
           configurationFile: .github/renovate.json
           token: ${{ secrets.RENOVATE_TOKEN }}
