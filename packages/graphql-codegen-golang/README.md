@@ -41,6 +41,8 @@ generates:
           generateHTTPClient: false # default
 ```
 
+See [`graphql.config.yaml`](/graphql.config.yaml) for more.
+
 ## Configuration
 
 Configuration source is at [src/config.ts](src/config.ts)
