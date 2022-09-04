@@ -6,6 +6,7 @@
     "gen": "graphql-codegen",
     "gen:rickandmorty": "pnpm run gen -p rickandmorty",
     "lint": "turbo run lint",
+    "prepare": "husky install",
     "test": "turbo run test",
     "test:rickandmorty": "go test -v ./examples/rickandmorty"
   },
