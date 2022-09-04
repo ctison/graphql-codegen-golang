@@ -40,6 +40,7 @@
   "renovate": {
     "extends": [
       "github>ctison/renovate"
-    ]
+    ],
+    "pinDigests": false
   }
 }
