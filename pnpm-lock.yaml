@@ -7,7 +7,7 @@ importers:
       '@graphql-codegen/cli': 2.12.0
       husky: 7.0.4
       lint-staged: 12.3.7
-      prettier: 2.6.0
+      prettier: 2.7.1
       sort-package-json: 1.54.0
       turbo: 1.4.5
       typescript: 4.8.2
@@ -15,7 +15,7 @@ importers:
       '@graphql-codegen/cli': 2.12.0_m4esaudxymmi2ax45wqxq2hc44
       husky: 7.0.4
       lint-staged: 12.3.7
-      prettier: 2.6.0
+      prettier: 2.7.1
       sort-package-json: 1.54.0
       turbo: 1.4.5
       typescript: 4.8.2
@@ -2028,8 +2028,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier/2.6.0:
-    resolution: {integrity: sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==}
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
