@@ -12,4 +12,10 @@ export interface IGolangPluginConfig {
    * ```
    */
   packageName?: string
+
+  /**
+   * Define if an HTTP client should be generated
+   * @default false
+   */
+  generateHTTPClient?: boolean
 }

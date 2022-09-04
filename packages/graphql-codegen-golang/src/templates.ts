@@ -1,4 +1,4 @@
-export const GOLANG_BASE: string = `
+export const GOLANG_HTTP: string = `
 type Client struct {
 	*http.Client
 	Url string

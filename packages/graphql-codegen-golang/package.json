@@ -1,0 +1,32 @@
+{
+  "name": "graphql-codegen-golang",
+  "description": "Graphql Code Generator plugin for generating Golang",
+  "keywords": [
+    "graphql-codegen",
+    "graphql",
+    "golang"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ctison/graphql-codegen-golang.git"
+  },
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "dist/"
+  ],
+  "dependencies": {
+    "@graphql-codegen/plugin-helpers": "2.7.0",
+    "graphql": "16.6.0",
+    "liquidjs": "9.42.0"
+  },
+  "devDependencies": {
+    "typescript": "4.8.2"
+  },
+  "scripts": {
+    "build": "rm -rf dist/ && tsc -p tsconfig.build.json",
+    "dev": "rm -rf dist/ && tsc -p tsconfig.build.json -w"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}

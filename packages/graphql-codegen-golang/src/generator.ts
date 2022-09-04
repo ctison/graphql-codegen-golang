@@ -1,4 +1,4 @@
-import { IGolangPluginConfig } from './config'
+import type { IGolangPluginConfig } from './config'
 import * as templates from './templates'
 import { Liquid, Template } from 'liquidjs'
 import {
@@ -18,7 +18,7 @@ import {
 } from 'graphql'
 
 /**
- * GolangGenerator is a class that you instanciate with a GraphQL schema
+ * GolangGenerator is a class that you instantiate with a GraphQL schema
  * and an optional configuration. You can then call its method `generate`
  * to generate Golang code.
  */
@@ -27,6 +27,7 @@ export class GolangGenerator {
    * The configuration used when generating Golang code.
    */
   public readonly config: IGolangPluginConfig
+
   /**
    * The GraphQL schema used to generate Golang code.
    */
@@ -94,14 +95,13 @@ export class GolangGenerator {
   }
 
   public generate(documents?: DocumentNode[]): string {
-    const l: string[] = [
-      ...this._generatePackage(),
-      ...this._generateImports(),
-      templates.GOLANG_BASE,
-    ]
-    documents?.forEach(document =>
-      l.push(...this._generateOperations(document))
-    )
+    const l: string[] = [...this._generatePackage(), ...this._generateImports()]
+    if (this.config.generateHTTPClient) {
+      l.push(templates.GOLANG_HTTP)
+      documents?.forEach(document =>
+        l.push(...this._generateOperations(document))
+      )
+    }
     l.push(...this._generateSchema())
     return l.join('\n')
   }
@@ -117,7 +117,7 @@ export class GolangGenerator {
     return name
       .replace(/(^_|_$)/, '')
       .split('_')
-      .map(word => word[0].toUpperCase() + word.substr(1))
+      .map(word => word[0]?.toUpperCase() + word.substr(1))
       .join('')
   }
 
@@ -137,17 +137,20 @@ export class GolangGenerator {
    * Generate Golang imports for operations.
    */
   private _generateImports(): string[] {
-    return [
-      'import (',
-      '  "bytes"',
-      '  "encoding/json"',
-      '  "fmt"',
-      '  "io/ioutil"',
-      '  "net/http"',
-      '  "strings"',
-      ')',
-      '',
-    ]
+    if (this.config.generateHTTPClient) {
+      return [
+        'import (',
+        '  "bytes"',
+        '  "encoding/json"',
+        '  "fmt"',
+        '  "io/ioutil"',
+        '  "net/http"',
+        '  "strings"',
+        ')',
+        '',
+      ]
+    }
+    return []
   }
 
   /**
@@ -181,7 +184,7 @@ export class GolangGenerator {
   private _generateEnums(): string[] {
     const l: string[] = [...this._generateSection('Enums')]
     this._enums.forEach(node => {
-      const goType: string = this.types[node.name.value]
+      const goType: string = this.types[node.name.value] as string
       l.push('', `type ${this.types[node.name.value]} string`, 'const (')
       node.values?.forEach(value => {
         const name: string = value.name.value
@@ -195,7 +198,7 @@ export class GolangGenerator {
   private _generateInputs(): string[] {
     const l: string[] = [...this._generateSection('Inputs')]
     this._inputs.forEach(node => {
-      const goType: string = this.types[node.name.value]
+      const goType: string = this.types[node.name.value] as string
       l.push('', `type ${goType} struct {`)
       node.fields?.forEach(field => {
         l.push(this._generateField(field.name.value, field.type))
@@ -208,7 +211,7 @@ export class GolangGenerator {
   private _generateObjects(): string[] {
     const l: string[] = [...this._generateSection('Objects')]
     this._objects.forEach(node => {
-      const goType: string = this.types[node.name.value]
+      const goType: string = this.types[node.name.value] as string
       l.push('', `type ${goType} struct {`)
       node.fields?.forEach(field => {
         l.push(this._generateField(field.name.value, field.type))
@@ -285,7 +288,7 @@ export class GolangGenerator {
             const name: string = this._formatName(operation.name.value)
             l.push(
               ...this._generateSection(
-                `${print(operation).split('{', 1)[0].trim()}`
+                `${print(operation).split('{', 1)[0]?.trim()}`
               )
             )
             // Generate operation variables type if any
@@ -298,6 +301,7 @@ export class GolangGenerator {
             // Finally, operation's response type are generated when visiting
             // inner AST nodes
             l.push(`type ${name}Response struct {`)
+            return
           },
           leave: operation => {
             if (!operation.name) return
@@ -324,9 +328,9 @@ export class GolangGenerator {
             const name: string = this._formatName(field.name.value)
             const w: string[] = [`  ${name} `]
             if (field.selectionSet) {
-              const outputType:
-                | string
-                | undefined = typeInfo.getType()?.toString()
+              const outputType: string | undefined = typeInfo
+                .getType()
+                ?.toString()
               if (outputType?.startsWith('[')) {
                 if (!outputType.endsWith('!')) {
                   w.push('*')

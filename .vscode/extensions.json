@@ -3,6 +3,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "golang.go",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "GraphQL.vscode-graphql"
   ]
 }
