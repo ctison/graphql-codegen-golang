@@ -36,10 +36,5 @@
     "turbo": "1.4.5",
     "typescript": "4.8.2"
   },
-  "packageManager": "pnpm@7.10.0",
-  "renovate": {
-    "extends": [
-      "github>ctison/renovate"
-    ]
-  }
+  "packageManager": "pnpm@7.10.0"
 }

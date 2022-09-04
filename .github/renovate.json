@@ -1,5 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>ctison/config//renovate/renovate"],
-  "repositories": ["ctison/graphql-codegen-golang"]
+  "repositories": ["ctison/graphql-codegen-golang"],
+  "pinDigests": false,
+  "automerge": true
 }
