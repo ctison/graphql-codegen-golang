@@ -11,10 +11,16 @@
     "url": "https://github.com/ctison/graphql-codegen-golang.git"
   },
   "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "README.md",
     "dist/"
   ],
+  "scripts": {
+    "build": "rm -rf dist/ && tsc -p tsconfig.build.json",
+    "dev": "rm -rf dist/ && tsc -p tsconfig.build.json -w"
+  },
   "dependencies": {
     "@graphql-codegen/plugin-helpers": "2.7.0",
     "graphql": "16.6.0",
@@ -22,11 +28,5 @@
   },
   "devDependencies": {
     "typescript": "4.8.2"
-  },
-  "scripts": {
-    "build": "rm -rf dist/ && tsc -p tsconfig.build.json",
-    "dev": "rm -rf dist/ && tsc -p tsconfig.build.json -w"
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts"
+  }
 }
