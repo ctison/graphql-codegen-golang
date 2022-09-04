@@ -14,24 +14,25 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: cicd-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
-      - uses: actions/setup-node@9ced9a43a244f3ac94f13bfd896db8c8f30da67a # tag=v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
 
       - name: Install & Build & Test
         run: |
           corepack enable
-          pnpm install --frozen-lockfile --strict-peer-dependencies
+          pnpm install --frozen-lockfile
           pnpm run build
-          pnpm run gen
+          pnpm run gen:rickandmorty
+          pnpm run test:rickandmorty
 
       - name: Compute package version
         id: version
@@ -40,22 +41,17 @@ jobs:
 
       - name: Publish NPM package
         if: startsWith(github.ref, 'refs/tags/v')
+        working-directory: packages/graphql-codegen-golang
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm version --no-git-tag-version '${{ steps.version.outputs.version }}'
-           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-          npm publish --access public
-           rm .npmrc
+          pnpm publish --access public
 
       - name: Github Release
         if: startsWith(github.ref, 'refs/tags/v')
-        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # tag=v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ steps.version.outputs.version }}
-          release_name: v${{ steps.version.outputs.version }}
           body: |
             ## NPM Package
             https://www.npmjs.com/package/graphql-codegen-golang/v/${{ steps.version.outputs.version }}

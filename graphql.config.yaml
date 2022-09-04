@@ -1,24 +1,25 @@
 projects:
   default:
-    schema: pkg/graphql/schema.graphql
-    documents: pkg/graphql/!(schema).graphql
+    schema: examples/graphql/schema.graphql
+    documents: examples/graphql/!(schema).graphql
     extensions:
       codegen:
         generates:
-          pkg/graphql/graphql.go:
+          examples/graphql/graphql.go:
             hooks:
               afterOneFileWrite: go fmt
             plugins:
-              - dist/index.js
+              - packages/graphql-codegen-golang/dist/index.js
   rickandmorty:
     schema: https://rickandmortyapi.com/graphql/
-    documents: pkg/rickandmorty/document.graphql
+    documents: examples/rickandmorty/document.graphql
     extensions:
       codegen:
         generates:
-          pkg/rickandmorty/graphql.go:
+          examples/rickandmorty/graphql.go:
             hooks:
               afterOneFileWrite: go fmt
             plugins:
-              - dist/index.js:
+              - packages/graphql-codegen-golang/dist/index.js:
                   packageName: rickandmorty
+                  generateHTTPClient: true

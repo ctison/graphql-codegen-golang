@@ -1,7 +1,8 @@
 node_modules/
 *.tsbuildinfo
 *.log
-/dist/
-/pkg/*/graphql.go
-/pkg/*/schema.graphql
-!/pkg/graphql/schema.graphql
+/packages/*/dist/
+/examples/*/graphql.go
+/examples/*/schema.graphql
+!/examples/graphql/schema.graphql
+.turbo/

@@ -1,0 +1,48 @@
+{
+  // https://www.typescriptlang.org/tsconfig
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    /* Modules */
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+
+    /* Language and Environment */
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "react-jsx",
+    "target": "ES2022",
+
+    /* Emit */
+    "declaration": true,
+    "declarationMap": true,
+    "importsNotUsedAsValues": "error",
+    "noEmit": true,
+    "removeComments": true,
+    "sourceMap": true,
+
+    /* JavaScript Support */
+    "checkJs": true,
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    /* Type Checking */
+    "strict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+
+    /* Completeness */
+    "skipLibCheck": true
+  }
+}

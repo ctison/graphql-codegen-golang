@@ -1,8 +1,8 @@
-import {
+import type {
   PluginFunction,
   PluginValidateFn,
 } from '@graphql-codegen/plugin-helpers'
-import { IGolangPluginConfig } from './config'
+import type { IGolangPluginConfig } from './config'
 import { GolangGenerator } from './generator'
 
 export const plugin: PluginFunction<IGolangPluginConfig> = (
@@ -19,7 +19,13 @@ export const plugin: PluginFunction<IGolangPluginConfig> = (
   )
 }
 
-export const validate: PluginValidateFn = async (__1, __2, __3, outputFile) => {
+export const validate: PluginValidateFn = async (
+  schema,
+  document,
+  config,
+  outputFile,
+  allPlugins
+) => {
   if (!outputFile.endsWith('.go')) {
     throw new Error(
       `Plugin "golang" requires output file extension to be ".go"!`
