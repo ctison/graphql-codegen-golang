@@ -25,6 +25,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
+      - uses: actions/setup-go@v3
+        with:
+          go-version-file: go.mod
 
       - name: Install & Build & Test
         run: |
