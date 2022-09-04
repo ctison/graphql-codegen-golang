@@ -1,3 +1,3 @@
 module github.com/ctison/graphql-codegen-golang
 
-go 1.18
+go 1.19.0
