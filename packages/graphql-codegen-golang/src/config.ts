@@ -15,7 +15,7 @@ export interface IGolangPluginConfig {
 
   /**
    * Define if an HTTP client should be generated
-   * @default false
+   * @default true
    */
   generateHTTPClient?: boolean
 }

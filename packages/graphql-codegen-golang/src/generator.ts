@@ -62,6 +62,7 @@ export class GolangGenerator {
 
   public constructor(schema: GraphQLSchema, config?: IGolangPluginConfig) {
     this.config = config ?? {}
+    this.config.generateHTTPClient ??= true
     this.schema = schema
     this._templateEngine = new Liquid({
       strictFilters: true,

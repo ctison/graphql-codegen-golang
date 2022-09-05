@@ -38,7 +38,7 @@ generates:
     plugins:
       - graphql-codegen-golang:
           packageName: graphql # default
-          generateHTTPClient: false # default
+          generateHTTPClient: true # default
 ```
 
 See [`graphql.config.yaml`](/graphql.config.yaml) for more.
@@ -50,4 +50,4 @@ Configuration source is at [src/config.ts](src/config.ts)
 | Name               | Type    | Default | Description                                |
 | ------------------ | ------- | ------- | ------------------------------------------ |
 | packageName        | string  | graphql | Name of the generated Golang package.      |
-| generateHTTPClient | boolean | false   | Should an GraphQL HTTP client be generated |
+| generateHTTPClient | boolean | true    | Should an GraphQL HTTP client be generated |

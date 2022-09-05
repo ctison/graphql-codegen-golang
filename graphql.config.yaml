@@ -9,7 +9,8 @@ projects:
             hooks:
               afterOneFileWrite: go fmt
             plugins:
-              - packages/graphql-codegen-golang/dist/index.js
+              - packages/graphql-codegen-golang/dist/index.js:
+                  generateHTTPClient: false
   rickandmorty:
     schema: https://rickandmortyapi.com/graphql/
     documents: examples/rickandmorty/document.graphql
@@ -22,4 +23,3 @@ projects:
             plugins:
               - packages/graphql-codegen-golang/dist/index.js:
                   packageName: rickandmorty
-                  generateHTTPClient: true
