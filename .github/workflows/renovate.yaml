@@ -16,8 +16,8 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: renovatebot/github-action@v32.190.2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+      - uses: renovatebot/github-action@8d88382e80a9c18c73052238a5f4a43aa1346c0b # tag=v32.190.2
         with:
           configurationFile: .github/renovate.json
           token: ${{ secrets.RENOVATE_TOKEN }}
