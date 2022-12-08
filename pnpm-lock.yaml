@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@graphql-codegen/cli': 2.15.0
+      '@graphql-codegen/cli': 2.16.1
       husky: 8.0.2
       lint-staged: 13.1.0
       prettier: 2.8.0
@@ -12,7 +12,7 @@ importers:
       turbo: 1.6.3
       typescript: 4.9.4
     devDependencies:
-      '@graphql-codegen/cli': 2.15.0_qx5eoorgue52li34ih7vvioybe
+      '@graphql-codegen/cli': 2.16.1_qx5eoorgue52li34ih7vvioybe
       husky: 8.0.2
       lint-staged: 13.1.0
       prettier: 2.8.0
@@ -267,8 +267,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@graphql-codegen/cli/2.15.0_qx5eoorgue52li34ih7vvioybe:
-    resolution: {integrity: sha512-o4Wh99VJDX/z0fG3pkdOf0t0fu7SlYn6qlLnqzNhVpZByGPe548gu11GKiOPKVaQ76kkB3dzqzfINRl+v7EA4A==}
+  /@graphql-codegen/cli/2.16.1_qx5eoorgue52li34ih7vvioybe:
+    resolution: {integrity: sha512-11z3iSlsNCXcNNkoRKG3wCmT9XpLf7/GZG9bWGXkCoveWVRwnRmo37YakHdNV3hbcJ4iiGbR3Z+MX9gUTEPDVA==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -276,8 +276,8 @@ packages:
       '@babel/generator': 7.20.4
       '@babel/template': 7.18.10
       '@babel/types': 7.20.2
-      '@graphql-codegen/core': 2.6.6_graphql@16.6.0
-      '@graphql-codegen/plugin-helpers': 2.7.2_graphql@16.6.0
+      '@graphql-codegen/core': 2.6.8_graphql@16.6.0
+      '@graphql-codegen/plugin-helpers': 3.1.1_graphql@16.6.0
       '@graphql-tools/apollo-engine-loader': 7.3.10_graphql@16.6.0
       '@graphql-tools/code-file-loader': 7.3.13_c6avfn5yvpbeqdnxh5e5qt5vqi
       '@graphql-tools/git-loader': 7.2.13_c6avfn5yvpbeqdnxh5e5qt5vqi
@@ -288,8 +288,7 @@ packages:
       '@graphql-tools/prisma-loader': 7.2.17_kkgf72yslujyuigxt3phk42gx4
       '@graphql-tools/url-loader': 7.14.2_kkgf72yslujyuigxt3phk42gx4
       '@graphql-tools/utils': 8.12.0_graphql@16.6.0
-      '@whatwg-node/fetch': 0.3.2
-      ansi-escapes: 4.3.2
+      '@whatwg-node/fetch': 0.5.3
       chalk: 4.1.2
       chokidar: 3.5.3
       cosmiconfig: 7.0.1
@@ -323,12 +322,12 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@graphql-codegen/core/2.6.6_graphql@16.6.0:
-    resolution: {integrity: sha512-gU2FUxoLGw2GfcPWfBVXuiN3aDODbZ6Z9I+IGxa2u1Rzxlacw4TMmcwr4/IjC6mkiYJEKTvdVspHaby+brhuAg==}
+  /@graphql-codegen/core/2.6.8_graphql@16.6.0:
+    resolution: {integrity: sha512-JKllNIipPrheRgl+/Hm/xuWMw9++xNQ12XJR/OHHgFopOg4zmN3TdlRSyYcv/K90hCFkkIwhlHFUQTfKrm8rxQ==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-codegen/plugin-helpers': 2.7.2_graphql@16.6.0
+      '@graphql-codegen/plugin-helpers': 3.1.1_graphql@16.6.0
       '@graphql-tools/schema': 9.0.4_graphql@16.6.0
       '@graphql-tools/utils': 9.1.1_graphql@16.6.0
       graphql: 16.6.0
@@ -347,6 +346,21 @@ packages:
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.4.0
+    dev: false
+
+  /@graphql-codegen/plugin-helpers/3.1.1_graphql@16.6.0:
+    resolution: {integrity: sha512-+V1WK4DUhejVSbkZrAsyv9gA4oQABVrtEUkT7vWq7gSf7Ln6OEM59lDUDsjp5wpLPTBIDJANbAe3qEd+iCB3Ow==}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@graphql-tools/utils': 8.12.0_graphql@16.6.0
+      change-case-all: 1.0.15
+      common-tags: 1.8.2
+      graphql: 16.6.0
+      import-from: 4.0.0
+      lodash: 4.17.21
+      tslib: 2.4.0
+    dev: true
 
   /@graphql-tools/apollo-engine-loader/7.3.10_graphql@16.6.0:
     resolution: {integrity: sha512-JqUqKBo/DsZA7QxaJIV3mho0j3xAcxG/InIvAn39zqfzUEt3DO4l1VEKwqqNLXgWstmhHaW6tY64EDE+txtFEg==}
@@ -1057,6 +1071,22 @@ packages:
       title-case: 3.0.3
       upper-case: 2.0.2
       upper-case-first: 2.0.2
+    dev: false
+
+  /change-case-all/1.0.15:
+    resolution: {integrity: sha512-3+GIFhk3sNuvFAJKU46o26OdzudQlPNBCu1ZQi3cMeMHhty1bhDxu2WrEilVNYaGvqUtR1VSigFcJOiS13dRhQ==}
+    dependencies:
+      change-case: 4.1.2
+      is-lower-case: 2.0.2
+      is-upper-case: 2.0.2
+      lower-case: 2.0.2
+      lower-case-first: 2.0.2
+      sponge-case: 1.0.1
+      swap-case: 2.0.2
+      title-case: 3.0.3
+      upper-case: 2.0.2
+      upper-case-first: 2.0.2
+    dev: true
 
   /change-case/4.1.2:
     resolution: {integrity: sha512-bSxY2ws9OtviILG1EiY5K7NNxkqg/JnRnFxLtKQ96JaviiIxi7djMrSd0ECT9AC+lttClmYwKw53BWpOMblo7A==}
