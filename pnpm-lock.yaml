@@ -10,28 +10,28 @@ importers:
       prettier: 2.8.0
       sort-package-json: 2.1.0
       turbo: 1.6.3
-      typescript: 4.9.3
+      typescript: 4.9.4
     devDependencies:
-      '@graphql-codegen/cli': 2.15.0_gzme5nmnatapsmeuz5en534x54
+      '@graphql-codegen/cli': 2.15.0_qx5eoorgue52li34ih7vvioybe
       husky: 8.0.2
       lint-staged: 13.1.0
       prettier: 2.8.0
       sort-package-json: 2.1.0
       turbo: 1.6.3
-      typescript: 4.9.3
+      typescript: 4.9.4
 
   packages/graphql-codegen-golang:
     specifiers:
       '@graphql-codegen/plugin-helpers': 2.7.2
       graphql: 16.6.0
       liquidjs: 10.2.0
-      typescript: 4.9.3
+      typescript: 4.9.4
     dependencies:
       '@graphql-codegen/plugin-helpers': 2.7.2_graphql@16.6.0
       graphql: 16.6.0
       liquidjs: 10.2.0
     devDependencies:
-      typescript: 4.9.3
+      typescript: 4.9.4
 
 packages:
 
@@ -267,7 +267,7 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@graphql-codegen/cli/2.15.0_gzme5nmnatapsmeuz5en534x54:
+  /@graphql-codegen/cli/2.15.0_qx5eoorgue52li34ih7vvioybe:
     resolution: {integrity: sha512-o4Wh99VJDX/z0fG3pkdOf0t0fu7SlYn6qlLnqzNhVpZByGPe548gu11GKiOPKVaQ76kkB3dzqzfINRl+v7EA4A==}
     hasBin: true
     peerDependencies:
@@ -293,11 +293,11 @@ packages:
       chalk: 4.1.2
       chokidar: 3.5.3
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 4.1.1_nggefdszuexxnu3ceegebrvyme
+      cosmiconfig-typescript-loader: 4.1.1_c2ftgamdaws7vustljp72kfmge
       debounce: 1.2.1
       detect-indent: 6.1.0
       graphql: 16.6.0
-      graphql-config: 4.3.6_kuvaumy3lsef6oryjoywkgakhe
+      graphql-config: 4.3.6_hjkcdjm6bilm7vodomi6kyykbm
       inquirer: 8.2.4
       is-glob: 4.0.3
       json-to-pretty-yaml: 1.2.2
@@ -1206,7 +1206,7 @@ packages:
       '@iarna/toml': 2.2.5
     dev: true
 
-  /cosmiconfig-typescript-loader/4.1.1_nggefdszuexxnu3ceegebrvyme:
+  /cosmiconfig-typescript-loader/4.1.1_c2ftgamdaws7vustljp72kfmge:
     resolution: {integrity: sha512-9DHpa379Gp0o0Zefii35fcmuuin6q92FnLDffzdZ0l9tVd3nEobG3O+MZ06+kuBvFTSVScvNb/oHA13Nd4iipg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1217,8 +1217,8 @@ packages:
     dependencies:
       '@types/node': 18.7.14
       cosmiconfig: 7.0.1
-      ts-node: 10.9.1_wxq7pnvmdrlh7twbkjft6kzmvy
-      typescript: 4.9.3
+      ts-node: 10.9.1_yqxdkczabdeeoik4pcvbzscpvi
+      typescript: 4.9.4
     dev: true
 
   /cosmiconfig/7.0.1:
@@ -1522,7 +1522,7 @@ packages:
       slash: 4.0.0
     dev: true
 
-  /graphql-config/4.3.6_kuvaumy3lsef6oryjoywkgakhe:
+  /graphql-config/4.3.6_hjkcdjm6bilm7vodomi6kyykbm:
     resolution: {integrity: sha512-i7mAPwc0LAZPnYu2bI8B6yXU5820Wy/ArvmOseDLZIu0OU1UTULEuexHo6ZcHXeT9NvGGaUPQZm8NV3z79YydA==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -1536,11 +1536,11 @@ packages:
       '@graphql-tools/utils': 8.12.0_graphql@16.6.0
       cosmiconfig: 7.0.1
       cosmiconfig-toml-loader: 1.0.0
-      cosmiconfig-typescript-loader: 4.1.1_nggefdszuexxnu3ceegebrvyme
+      cosmiconfig-typescript-loader: 4.1.1_c2ftgamdaws7vustljp72kfmge
       graphql: 16.6.0
       minimatch: 4.2.1
       string-env-interpolation: 1.0.1
-      ts-node: 10.9.1_wxq7pnvmdrlh7twbkjft6kzmvy
+      ts-node: 10.9.1_yqxdkczabdeeoik4pcvbzscpvi
       tslib: 2.4.0
     transitivePeerDependencies:
       - '@swc/core'
@@ -2543,7 +2543,7 @@ packages:
     resolution: {integrity: sha512-DEQrfv6l7IvN2jlzc/VTdZJYsWUnQNCsueYjMkC/iXoEoi5fNan6MjeDqkvhfzbmHgdz9UxDUluX3V5HdjTydQ==}
     dev: true
 
-  /ts-node/10.9.1_wxq7pnvmdrlh7twbkjft6kzmvy:
+  /ts-node/10.9.1_yqxdkczabdeeoik4pcvbzscpvi:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -2569,7 +2569,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.9.3
+      typescript: 4.9.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -2643,8 +2643,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typescript/4.9.3:
-    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
+  /typescript/4.9.4:
+    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
