@@ -22,12 +22,12 @@ importers:
 
   packages/graphql-codegen-golang:
     specifiers:
-      '@graphql-codegen/plugin-helpers': 2.7.2
+      '@graphql-codegen/plugin-helpers': 3.1.1
       graphql: 16.6.0
       liquidjs: 10.2.0
       typescript: 4.9.4
     dependencies:
-      '@graphql-codegen/plugin-helpers': 2.7.2_graphql@16.6.0
+      '@graphql-codegen/plugin-helpers': 3.1.1_graphql@16.6.0
       graphql: 16.6.0
       liquidjs: 10.2.0
     devDependencies:
@@ -334,20 +334,6 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@graphql-codegen/plugin-helpers/2.7.2_graphql@16.6.0:
-    resolution: {integrity: sha512-kln2AZ12uii6U59OQXdjLk5nOlh1pHis1R98cDZGFnfaiAbX9V3fxcZ1MMJkB7qFUymTALzyjZoXXdyVmPMfRg==}
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      '@graphql-tools/utils': 8.12.0_graphql@16.6.0
-      change-case-all: 1.0.14
-      common-tags: 1.8.2
-      graphql: 16.6.0
-      import-from: 4.0.0
-      lodash: 4.17.21
-      tslib: 2.4.0
-    dev: false
-
   /@graphql-codegen/plugin-helpers/3.1.1_graphql@16.6.0:
     resolution: {integrity: sha512-+V1WK4DUhejVSbkZrAsyv9gA4oQABVrtEUkT7vWq7gSf7Ln6OEM59lDUDsjp5wpLPTBIDJANbAe3qEd+iCB3Ow==}
     peerDependencies:
@@ -360,7 +346,6 @@ packages:
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.4.0
-    dev: true
 
   /@graphql-tools/apollo-engine-loader/7.3.10_graphql@16.6.0:
     resolution: {integrity: sha512-JqUqKBo/DsZA7QxaJIV3mho0j3xAcxG/InIvAn39zqfzUEt3DO4l1VEKwqqNLXgWstmhHaW6tY64EDE+txtFEg==}
@@ -1058,21 +1043,6 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /change-case-all/1.0.14:
-    resolution: {integrity: sha512-CWVm2uT7dmSHdO/z1CXT/n47mWonyypzBbuCy5tN7uMg22BsfkhwT6oHmFCAk+gL1LOOxhdbB9SZz3J1KTY3gA==}
-    dependencies:
-      change-case: 4.1.2
-      is-lower-case: 2.0.2
-      is-upper-case: 2.0.2
-      lower-case: 2.0.2
-      lower-case-first: 2.0.2
-      sponge-case: 1.0.1
-      swap-case: 2.0.2
-      title-case: 3.0.3
-      upper-case: 2.0.2
-      upper-case-first: 2.0.2
-    dev: false
-
   /change-case-all/1.0.15:
     resolution: {integrity: sha512-3+GIFhk3sNuvFAJKU46o26OdzudQlPNBCu1ZQi3cMeMHhty1bhDxu2WrEilVNYaGvqUtR1VSigFcJOiS13dRhQ==}
     dependencies:
@@ -1086,7 +1056,6 @@ packages:
       title-case: 3.0.3
       upper-case: 2.0.2
       upper-case-first: 2.0.2
-    dev: true
 
   /change-case/4.1.2:
     resolution: {integrity: sha512-bSxY2ws9OtviILG1EiY5K7NNxkqg/JnRnFxLtKQ96JaviiIxi7djMrSd0ECT9AC+lttClmYwKw53BWpOMblo7A==}
