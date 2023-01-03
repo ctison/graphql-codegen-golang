@@ -24,12 +24,12 @@ importers:
     specifiers:
       '@graphql-codegen/plugin-helpers': 3.1.2
       graphql: 16.6.0
-      liquidjs: 10.3.3
+      liquidjs: 10.4.0
       typescript: 4.9.4
     dependencies:
       '@graphql-codegen/plugin-helpers': 3.1.2_graphql@16.6.0
       graphql: 16.6.0
-      liquidjs: 10.3.3
+      liquidjs: 10.4.0
     devDependencies:
       typescript: 4.9.4
 
@@ -2067,8 +2067,8 @@ packages:
       - supports-color
     dev: true
 
-  /liquidjs/10.3.3:
-    resolution: {integrity: sha512-o6s4rOn81x0FlF9SJEQEx3f/j3iL0Iq3zqOsbFEcsoi7Ivn6jEXBEi2Xl5k0oYc7KqYS54uGOa9XC4Ahk7zdFA==}
+  /liquidjs/10.4.0:
+    resolution: {integrity: sha512-4fpR8KFJ96bXkzynK9Yo1jwn7sjOkJfKawSbEXINc39DZfy7r5SYtcAM5T/Ccg5n0xoZf6ap5Gap4VwFCJiQ1g==}
     engines: {node: '>=14'}
     hasBin: true
     dev: false
