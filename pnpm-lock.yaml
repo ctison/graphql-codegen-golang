@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       '@graphql-codegen/cli': 2.16.2
-      husky: 8.0.2
+      husky: 8.0.3
       lint-staged: 13.1.0
       prettier: 2.8.0
       sort-package-json: 2.1.0
@@ -13,7 +13,7 @@ importers:
       typescript: 4.9.4
     devDependencies:
       '@graphql-codegen/cli': 2.16.2_qx5eoorgue52li34ih7vvioybe
-      husky: 8.0.2
+      husky: 8.0.3
       lint-staged: 13.1.0
       prettier: 2.8.0
       sort-package-json: 2.1.0
@@ -1804,8 +1804,8 @@ packages:
     engines: {node: '>=12.20.0'}
     dev: true
 
-  /husky/8.0.2:
-    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
