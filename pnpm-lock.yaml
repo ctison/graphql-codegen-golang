@@ -8,7 +8,7 @@ importers:
       husky: 8.0.3
       lint-staged: 13.1.0
       prettier: 2.8.3
-      sort-package-json: 2.1.0
+      sort-package-json: 2.2.0
       turbo: 1.7.0
       typescript: 4.9.4
     devDependencies:
@@ -16,7 +16,7 @@ importers:
       husky: 8.0.3
       lint-staged: 13.1.0
       prettier: 2.8.3
-      sort-package-json: 2.1.0
+      sort-package-json: 2.2.0
       turbo: 1.7.0
       typescript: 4.9.4
 
@@ -2492,8 +2492,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: true
 
-  /sort-package-json/2.1.0:
-    resolution: {integrity: sha512-M5ctkdnn7znAkoVQJ0Y+PHDUieyXMhydPyW7r2J9ZM0Iwc3BTyEf5cmoSRfHNo07FEvzWwnphcP7GlrAX164UQ==}
+  /sort-package-json/2.2.0:
+    resolution: {integrity: sha512-ux712xsrPqkW+0b51GdmC8QTvImM3wsdip9mNVSQTY9ZV3/1eTAK6jIcQ8Vz9kfN1WHL4wv/pLn89mrqeyQu6A==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1
