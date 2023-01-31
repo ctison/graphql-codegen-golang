@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@graphql-codegen/cli': 2.16.4
+      '@graphql-codegen/cli': 2.16.5
       husky: 8.0.3
       lint-staged: 13.1.0
       prettier: 2.8.3
@@ -12,7 +12,7 @@ importers:
       turbo: 1.7.0
       typescript: 4.9.4
     devDependencies:
-      '@graphql-codegen/cli': 2.16.4_unxrxhied6v4kmhgeqguvt7wbu
+      '@graphql-codegen/cli': 2.16.5_warigzr4y7k5ocrh4u366ye6uu
       husky: 8.0.3
       lint-staged: 13.1.0
       prettier: 2.8.3
@@ -267,12 +267,11 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@graphql-codegen/cli/2.16.4_unxrxhied6v4kmhgeqguvt7wbu:
-    resolution: {integrity: sha512-MBbdzIIaNZ8BTlFXG00toxU5rIV7Ltf2myaze88HpI5YPVfVJKlfccE6l0/Gv+nLv88CIM/PZrnFLdVtlBmrZw==}
+  /@graphql-codegen/cli/2.16.5_warigzr4y7k5ocrh4u366ye6uu:
+    resolution: {integrity: sha512-XYPIp+q7fB0xAGSAoRykiTe4oY80VU+z+dw5nuv4mLY0+pv7+pa2C6Nwhdw7a65lXOhFviBApWCCZeqd54SMnA==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-      ts-node: '>=10'
     dependencies:
       '@babel/generator': 7.20.4
       '@babel/template': 7.18.10
@@ -312,6 +311,8 @@ packages:
       yargs: 17.5.1
     transitivePeerDependencies:
       - '@babel/core'
+      - '@swc/core'
+      - '@swc/wasm'
       - '@types/node'
       - bufferutil
       - cosmiconfig-toml-loader
