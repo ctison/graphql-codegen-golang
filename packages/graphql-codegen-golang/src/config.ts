@@ -18,4 +18,10 @@ export interface IGolangPluginConfig {
    * @default true
    */
   generateHTTPClient?: boolean
+
+  /**
+   * Quietly skip unsupported types like union
+   * @default false
+   */
+  skipUnsupportedTypes?: boolean
 }

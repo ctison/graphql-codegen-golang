@@ -63,6 +63,7 @@ export class GolangGenerator {
   public constructor(schema: GraphQLSchema, config?: IGolangPluginConfig) {
     this.config = config ?? {}
     this.config.generateHTTPClient ??= true
+    this.config.skipUnsupportedTypes ??= false
     this.schema = schema
     this._templateEngine = new Liquid({
       strictFilters: true,
@@ -215,7 +216,13 @@ export class GolangGenerator {
       const goType: string = this.types[node.name.value] as string
       l.push('', `type ${goType} struct {`)
       node.fields?.forEach(field => {
-        l.push(this._generateField(field.name.value, field.type))
+        try {
+          l.push(this._generateField(field.name.value, field.type))
+        } catch (e) {
+          if (!this.config.skipUnsupportedTypes) {
+            throw e
+          }
+        }
       })
       l.push('}')
     })
@@ -244,7 +251,7 @@ export class GolangGenerator {
     prefix: string = '',
     nonNull: boolean = false
   ): string {
-    if (type.kind === 'NamedType') {
+    if (type.kind === 'NamedType' && this.types[type.name.value]) {
       return [
         `${nonNull ? '' : '*'}${prefix}`,
         `${this.types[type.name.value]} `,
@@ -267,7 +274,7 @@ export class GolangGenerator {
         nonNull
       )
     }
-    throw new Error(`field type "${type}" not supported!`)
+    throw new Error(`field type "${type.name.value}" not supported!`)
   }
 
   /**
