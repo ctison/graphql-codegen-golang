@@ -36,6 +36,7 @@ jobs:
           pnpm run build
           pnpm run gen:rickandmorty
           pnpm run test:rickandmorty
+          pnpm run gen:anilist
 
       - name: Compute package version
         id: version

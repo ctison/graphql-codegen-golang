@@ -244,7 +244,7 @@ export class GolangGenerator {
     prefix: string = '',
     nonNull: boolean = false
   ): string {
-    if (type.kind === 'NamedType') {
+    if (type.kind === 'NamedType' && this.types[type.name.value]) {
       return [
         `${nonNull ? '' : '*'}${prefix}`,
         `${this.types[type.name.value]} `,
@@ -267,7 +267,8 @@ export class GolangGenerator {
         nonNull
       )
     }
-    throw new Error(`field type "${type}" not supported!`)
+    console.debug(`Skipped unsupported field type "${type.name.value}"`)
+    return ''
   }
 
   /**
