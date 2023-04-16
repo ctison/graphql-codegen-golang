@@ -23,3 +23,14 @@ projects:
             plugins:
               - packages/graphql-codegen-golang/dist/index.js:
                   packageName: rickandmorty
+  anilist:
+    schema: https://graphql.anilist.co
+    extensions:
+      codegen:
+        generates:
+          examples/anilist/graphql.go:
+            hooks:
+              afterOneFileWrite: go fmt
+            plugins:
+              - packages/graphql-codegen-golang/dist/index.js:
+                  packageName: anilist

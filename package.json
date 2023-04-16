@@ -4,6 +4,7 @@
     "build": "turbo run build",
     "format": "prettier --write .",
     "gen": "graphql-codegen",
+    "gen:anilist": "pnpm run gen -p anilist",
     "gen:rickandmorty": "pnpm run gen -p rickandmorty",
     "lint": "turbo run lint",
     "prepare": "husky install",

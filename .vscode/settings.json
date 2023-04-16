@@ -14,5 +14,12 @@
   },
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-  "cSpell.words": ["codegen", "pnpm", "nvmrc", "rickandmorty", "liquidjs"]
+  "cSpell.words": [
+    "anilist",
+    "codegen",
+    "liquidjs",
+    "nvmrc",
+    "pnpm",
+    "rickandmorty"
+  ]
 }
