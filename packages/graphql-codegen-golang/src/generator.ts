@@ -202,7 +202,15 @@ export class GolangGenerator {
       const goType: string = this.types[node.name.value] as string
       l.push('', `type ${goType} struct {`)
       node.fields?.forEach(field => {
-        l.push(this._generateField(field.name.value, field.type))
+        try {
+          l.push(this._generateField(field.name.value, field.type))
+        } catch (e) {
+          if (e instanceof UnsupportedTypeError) {
+            console.debug(`Skipping ${e.message}`)
+          } else {
+            throw e
+          }
+        }
       })
       l.push('}')
     })
@@ -215,7 +223,15 @@ export class GolangGenerator {
       const goType: string = this.types[node.name.value] as string
       l.push('', `type ${goType} struct {`)
       node.fields?.forEach(field => {
-        l.push(this._generateField(field.name.value, field.type))
+        try {
+          l.push(this._generateField(field.name.value, field.type))
+        } catch (e) {
+          if (e instanceof UnsupportedTypeError) {
+            console.debug(`Skipping ${e.message}`)
+          } else {
+            throw e
+          }
+        }
       })
       l.push('}')
     })
@@ -267,8 +283,9 @@ export class GolangGenerator {
         nonNull
       )
     }
-    console.debug(`Skipped unsupported field type "${type.name.value}"`)
-    return ''
+    throw new UnsupportedTypeError(
+      `unsupported field type "${type.name.value}"`
+    )
   }
 
   /**
@@ -370,7 +387,15 @@ export class GolangGenerator {
     }
     const l: string[] = [`type ${name}Variables struct {`]
     variableDefinitions.forEach(variable => {
-      l.push(this._generateField(variable.variable.name.value, variable.type))
+      try {
+        l.push(this._generateField(variable.variable.name.value, variable.type))
+      } catch (e) {
+        if (e instanceof UnsupportedTypeError) {
+          console.debug(`Skipping ${e.message}`)
+        } else {
+          throw e
+        }
+      }
     })
     l.push('}', '')
     return l
@@ -397,5 +422,12 @@ export class GolangGenerator {
       })
     )
     return l
+  }
+}
+
+class UnsupportedTypeError extends Error {
+  constructor(msg: string) {
+    super(msg)
+    Object.setPrototypeOf(this, UnsupportedTypeError.prototype)
   }
 }
