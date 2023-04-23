@@ -5,8 +5,8 @@ importers:
   .:
     devDependencies:
       '@graphql-codegen/cli':
-        specifier: 3.3.0
-        version: 3.3.0(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.6.0)
+        specifier: 3.3.1
+        version: 3.3.1(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.6.0)
       husky:
         specifier: 8.0.3
         version: 8.0.3
@@ -269,8 +269,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@graphql-codegen/cli@3.3.0(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.6.0):
-    resolution: {integrity: sha512-KRQoAG0stor/ztMsBxHqxnwQzcM1DEZigwzah1LFej8bh6TT1WpUt37zt6PH0EdlMpelmeN3keY4Pq6GMd4ADw==}
+  /@graphql-codegen/cli@3.3.1(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.6.0):
+    resolution: {integrity: sha512-4Es8Y9zFeT0Zx2qRL7L3qXDbbqvXK6aID+8v8lP6gaYD+uWx3Jd4Hsq5vxwVBR+6flm0BW/C85Qm0cvmT7O6LA==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
