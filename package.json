@@ -32,7 +32,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "3.3.1",
     "husky": "8.0.3",
-    "lint-staged": "13.2.1",
+    "lint-staged": "13.2.2",
     "prettier": "2.8.8",
     "sort-package-json": "2.4.1",
     "turbo": "1.9.3",
