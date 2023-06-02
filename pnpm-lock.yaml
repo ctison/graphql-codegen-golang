@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@graphql-codegen/cli':
-        specifier: 4.0.0
-        version: 4.0.0(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.6.0)
+        specifier: 4.0.1
+        version: 4.0.1(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.6.0)
       husky:
         specifier: 8.0.3
         version: 8.0.3
@@ -273,8 +273,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@graphql-codegen/cli@4.0.0(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.6.0):
-    resolution: {integrity: sha512-wmJXs48Apu+dXQ7utHa3cY1ulFJuflrqpbkhLwxfIAHjSfQouWCn2k7Udq+5PqbCLTDdbUQvw6vGZ5hgud0XuQ==}
+  /@graphql-codegen/cli@4.0.1(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.6.0):
+    resolution: {integrity: sha512-/H4imnGOl3hoPXLKmIiGUnXpmBmeIClSZie/YHDzD5N59cZlGGJlIOOrUlOTDpJx5JNU1MTQcRjyTToOYM5IfA==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -301,10 +301,10 @@ packages:
       debounce: 1.2.1
       detect-indent: 6.1.0
       graphql: 16.6.0
-      graphql-config: 5.0.1(@types/node@18.7.14)(graphql@16.6.0)
+      graphql-config: 5.0.2(@types/node@18.7.14)(graphql@16.6.0)
       inquirer: 8.2.4
       is-glob: 4.0.3
-      jiti: 1.17.2
+      jiti: 1.18.2
       json-to-pretty-yaml: 1.2.2
       listr2: 4.0.5
       log-symbols: 4.1.0
@@ -665,7 +665,7 @@ packages:
       graphql: 16.6.0
       isomorphic-ws: 5.0.0(ws@8.13.0)
       tslib: 2.5.0
-      value-or-promise: 1.0.11
+      value-or-promise: 1.0.12
       ws: 8.13.0
     transitivePeerDependencies:
       - '@types/node'
@@ -1437,9 +1437,9 @@ packages:
       slash: 4.0.0
     dev: true
 
-  /graphql-config@5.0.1(@types/node@18.7.14)(graphql@16.6.0):
-    resolution: {integrity: sha512-cOi5RUK1QOoqwfzCeyVxRn6nsFqzjq7rs93ZvqT+gNxTgmhpROg3ZetgdbhC/yUWnguDM4S9GoHak+Xh9jLZeA==}
-    engines: {node: '>= 16.0.0', pnpm: 7.32.4}
+  /graphql-config@5.0.2(@types/node@18.7.14)(graphql@16.6.0):
+    resolution: {integrity: sha512-7TPxOrlbiG0JplSZYCyxn2XQtqVhXomEjXUmWJVSS5ET1nPhOJSsIb/WTwqWhcYX6G0RlHXSj9PLtGTKmxLNGg==}
+    engines: {node: '>= 16.0.0'}
     peerDependencies:
       cosmiconfig-toml-loader: ^1.0.0
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -1667,11 +1667,6 @@ packages:
       ws: '*'
     dependencies:
       ws: 8.13.0
-    dev: true
-
-  /jiti@1.17.2:
-    resolution: {integrity: sha512-Xf0nU8+8wuiQpLcqdb2HRyHqYwGk2Pd+F7kstyp20ZuqTyCmB9dqpX2NxaxFc1kovraa2bG6c1RL3W7XfapiZg==}
-    hasBin: true
     dev: true
 
   /jiti@1.18.2:
@@ -2487,11 +2482,6 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-    dev: true
-
-  /value-or-promise@1.0.11:
-    resolution: {integrity: sha512-41BrgH+dIbCFXClcSapVs5M6GkENd3gQOJpEfPDNa71LsUGMXDL0jMWpI/Rh7WhX+Aalfz2TTS3Zt5pUsbnhLg==}
-    engines: {node: '>=12'}
     dev: true
 
   /value-or-promise@1.0.12:
