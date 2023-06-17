@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -39,8 +39,8 @@ importers:
         specifier: 16.6.0
         version: 16.6.0
       liquidjs:
-        specifier: 10.8.2
-        version: 10.8.2
+        specifier: 10.8.3
+        version: 10.8.3
     devDependencies:
       typescript:
         specifier: 4.9.5
@@ -1755,8 +1755,8 @@ packages:
       - supports-color
     dev: true
 
-  /liquidjs@10.8.2:
-    resolution: {integrity: sha512-U6T0nLCwQjdYKh6e32X0f8cpMpRByrCgk6PViMaKszSbNIwobe24T050CSUauklYIuDtvVlfW8DRM+QS6gPCSQ==}
+  /liquidjs@10.8.3:
+    resolution: {integrity: sha512-LqHLYtH3vrkT3LyfOhPU0FJX5KPO4aB6SzGa4HRI29yz8pS0ZxqIe/fWtic8qiust1+qrHI92J67tdt92V4WOA==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
