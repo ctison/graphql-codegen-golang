@@ -12,8 +12,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(@babel/core@7.20.2)(@types/node@18.7.14)(graphql@16.8.1)
       husky:
-        specifier: 9.0.7
-        version: 9.0.7
+        specifier: 9.0.10
+        version: 9.0.10
       lint-staged:
         specifier: 15.2.1
         version: 15.2.1
@@ -1554,8 +1554,8 @@ packages:
     engines: {node: '>=16.17.0'}
     dev: true
 
-  /husky@9.0.7:
-    resolution: {integrity: sha512-vWdusw+y12DUEeoZqW1kplOFqk3tedGV8qlga8/SF6a3lOiWLqGZZQvfWvY0fQYdfiRi/u1DFNpudTSV9l1aCg==}
+  /husky@9.0.10:
+    resolution: {integrity: sha512-TQGNknoiy6bURzIO77pPRu+XHi6zI7T93rX+QnJsoYFf3xdjKOur+IlfqzJGMHIK/wXrLg+GsvMs8Op7vI2jVA==}
     engines: {node: '>=18'}
     hasBin: true
     dev: true
