@@ -39,8 +39,8 @@ importers:
         specifier: 16.8.1
         version: 16.8.1
       liquidjs:
-        specifier: 10.10.2
-        version: 10.10.2
+        specifier: 10.11.0
+        version: 10.11.0
     devDependencies:
       typescript:
         specifier: 4.9.5
@@ -2651,8 +2651,8 @@ packages:
       - supports-color
     dev: true
 
-  /liquidjs@10.10.2:
-    resolution: {integrity: sha512-UcuTUexKg/8CmX6I5KNghk13pl3c8Rqhm+WSWqrc17pQP9LjpYPpOLDKG9OMBeHDBQ70yyn/GOqyZ/EKJ4z5yg==}
+  /liquidjs@10.11.0:
+    resolution: {integrity: sha512-DPUG/ez9KbeV6oxon4EOJPzkNModjYmSa2ceP3r9+3bOV9+MnpN/+a1KwGaj8bz5pp4td3kBiHrPX9sC7iuDxA==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
