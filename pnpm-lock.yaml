@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
@@ -39,8 +39,8 @@ importers:
         specifier: 16.8.1
         version: 16.8.1
       liquidjs:
-        specifier: 10.11.0
-        version: 10.11.0
+        specifier: 10.11.1
+        version: 10.11.1
     devDependencies:
       typescript:
         specifier: 4.9.5
@@ -1333,8 +1333,8 @@ packages:
     engines: {node: '>=18.12.0'}
     hasBin: true
 
-  liquidjs@10.11.0:
-    resolution: {integrity: sha512-DPUG/ez9KbeV6oxon4EOJPzkNModjYmSa2ceP3r9+3bOV9+MnpN/+a1KwGaj8bz5pp4td3kBiHrPX9sC7iuDxA==}
+  liquidjs@10.11.1:
+    resolution: {integrity: sha512-ORlMi7Okt311anHyvuYTRijrdX9He4lbeGEfugSLeHuSYREnFM2M0ppG1/zQHR/k5KSvMP/d4DfUDIFdS8MtqQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3626,7 +3626,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  liquidjs@10.11.0:
+  liquidjs@10.11.1:
     dependencies:
       commander: 10.0.0
 
@@ -3705,7 +3705,7 @@ snapshots:
   merge2@1.4.1: {}
 
   meros@1.2.1(@types/node@18.7.14):
-    dependencies:
+    optionalDependencies:
       '@types/node': 18.7.14
 
   micromatch@4.0.5:
