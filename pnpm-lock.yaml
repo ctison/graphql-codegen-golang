@@ -39,8 +39,8 @@ importers:
         specifier: 16.8.1
         version: 16.8.1
       liquidjs:
-        specifier: 10.13.0
-        version: 10.13.0
+        specifier: 10.13.1
+        version: 10.13.1
     devDependencies:
       typescript:
         specifier: 4.9.5
@@ -1213,6 +1213,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -1346,8 +1347,8 @@ packages:
     engines: {node: '>=18.12.0'}
     hasBin: true
 
-  liquidjs@10.13.0:
-    resolution: {integrity: sha512-MnxinZZgtLcbuvwjCuNwsVthDQgcGEJzXRZZIq9rkUILwLbez3286Gsl0P3h9cL3crng45Joh+sCMcoQ0WsL5w==}
+  liquidjs@10.13.1:
+    resolution: {integrity: sha512-QCQ69sbyMdA1970NEsG7KdQoKi6N+lGg55izisvKvrrRO1nrpS/YBAnzDndR13exYB4xE9A87qdOMuaXPn9v9A==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3673,7 +3674,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  liquidjs@10.13.0:
+  liquidjs@10.13.1:
     dependencies:
       commander: 10.0.0
 
