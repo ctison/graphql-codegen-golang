@@ -27,8 +27,8 @@ importers:
         specifier: 1.13.4
         version: 1.13.4
       typescript:
-        specifier: 4.9.5
-        version: 4.9.5
+        specifier: 5.5.4
+        version: 5.5.4
 
   packages/graphql-codegen-golang:
     dependencies:
@@ -43,8 +43,8 @@ importers:
         version: 10.16.1
     devDependencies:
       typescript:
-        specifier: 4.9.5
-        version: 4.9.5
+        specifier: 5.5.4
+        version: 5.5.4
 
 packages:
 
@@ -1884,9 +1884,9 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   ua-parser-js@1.0.37:
@@ -4170,7 +4170,7 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  typescript@4.9.5: {}
+  typescript@5.5.4: {}
 
   ua-parser-js@1.0.37: {}
 
