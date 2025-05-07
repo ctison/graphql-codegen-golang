@@ -30,7 +30,7 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "5.0.5",
+    "@graphql-codegen/cli": "5.0.6",
     "husky": "9.1.7",
     "lint-staged": "15.5.1",
     "prettier": "3.5.3",
