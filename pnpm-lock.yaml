@@ -18,8 +18,8 @@ importers:
         specifier: 16.2.7
         version: 16.2.7
       prettier:
-        specifier: 3.7.4
-        version: 3.7.4
+        specifier: 3.8.0
+        version: 3.8.0
       sort-package-json:
         specifier: 3.6.0
         version: 3.6.0
@@ -1549,8 +1549,8 @@ packages:
     engines: {node: '>=0.10'}
     hasBin: true
 
-  prettier@3.7.4:
-    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
+  prettier@3.8.0:
+    resolution: {integrity: sha512-yEPsovQfpxYfgWNhCfECjG5AQaO+K3dp6XERmOepyPDVqcJm+bjyCVO3pmU+nAPe0N5dDvekfGezt/EIiRe1TA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3675,7 +3675,7 @@ snapshots:
 
   pidtree@0.6.0: {}
 
-  prettier@3.7.4: {}
+  prettier@3.8.0: {}
 
   promise@7.3.1:
     dependencies:
