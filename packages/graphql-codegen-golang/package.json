@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@graphql-codegen/plugin-helpers": "7.0.0",
-    "graphql": "16.13.2",
+    "graphql": "16.14.0",
     "liquidjs": "10.25.7"
   },
   "devDependencies": {
