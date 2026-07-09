@@ -22,7 +22,7 @@
     "dev": "rm -rf dist/ && tsc -p tsconfig.build.json -w"
   },
   "dependencies": {
-    "@graphql-codegen/plugin-helpers": "7.0.1",
+    "@graphql-codegen/plugin-helpers": "7.1.0",
     "graphql": "17.0.2",
     "liquidjs": "10.27.1"
   },
